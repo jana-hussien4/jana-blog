@@ -1,0 +1,31 @@
+  ---
+  _layouts/home.html
+  ---
+  layout: default
+  ---
+
+  <section class="hero reveal">
+    <div class="hero-badge">
+      <span>Dev Degree @ Shopify</span> &middot; Learning in public
+    </div>
+    <p class="hero-sub">A journal of everything I figure out along the way.</p>
+  </section>
+
+  <section class="reveal">
+    <p class="posts-section-title">All posts</p>
+    <div class="posts-grid">
+      {% for post in site.posts %}
+      <a class="post-card" href="{{ post.url | relative_url }}">
+        <div class="post-meta">
+          <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
+          {% for cat in post.categories %}
+            <span class="tag">{{ cat }}</span>
+          {% endfor %}
+        </div>
+        <div class="post-card-title">{{ post.title }}</div>
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+
