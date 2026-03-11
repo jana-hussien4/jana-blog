@@ -1,0 +1,44 @@
+---                                                                              
+layout: default                                                                  
+---             
+                                                                                   
+  <div class="floating-bg" aria-hidden="true">
+    <span>404</span>
+    <span>500</span>
+    <span>502</span>
+    <span>200</span>
+    <span>409</span>
+    <span>401</span>
+    <span>403</span>
+    <span>422</span>
+    <span>503</span>
+    <span>504</span>
+    <span>301</span>
+    <span>429</span>
+    <span>410</span>
+    <span>201</span>
+    <span>204</span>
+    <span>400</span>
+    <span>501</span>
+    <span>101</span>
+  </div>
+
+  <article class="post reveal">
+    <header class="post-header">
+      <div class="post-meta">
+        <span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span>
+        {% for cat in page.categories %}
+          <span class="tag">{{ cat }}</span>
+        {% endfor %}
+      </div>
+      <h1>{{ page.title }}</h1>
+    </header>
+
+    <div class="post-content">
+      {{ content }}
+    </div>
+
+    <footer class="post-footer">
+      <a href="{{ '/' | relative_url }}" class="back-link">← All posts</a>
+    </footer>
+  </article>
